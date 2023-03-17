@@ -1,0 +1,15 @@
+mov EAX 6
+mov EBX 3
+add EAX EBX
+out EAX
+sub EAX EBX
+out EAX
+mul EAX EBX
+out EAX
+div EAX EBX
+out EAX
+mov ECX 1
+e1: sub EAX ECX
+out EAX
+jnz EAX e1
+out EAX

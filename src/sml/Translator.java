@@ -40,6 +40,7 @@ public final class Translator {
             // Each iteration processes line and reads the next input line into "line"
             while (sc.hasNextLine()) {
                 line = sc.nextLine();
+                System.out.println(line);
                 String label = getLabel();
 
                 Instruction instruction = getInstruction(label);
@@ -99,10 +100,11 @@ public final class Translator {
                 return new OutInstruction(label, Register.valueOf(s));
             }
             case JnzInstruction.OP_CODE -> {
-                String r= scan();
-                String x = scan();
-                return new MovInstruction(label, Register.valueOf(r), Integer.valueOf(x));
+                String s = scan();
+                String lb=scan();
+                return new JnzInstruction(label, Register.valueOf(s),lb);
             }
+
 
             // TODO: Then, replace the switch by using the Reflection API
 

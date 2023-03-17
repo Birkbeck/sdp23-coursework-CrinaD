@@ -49,10 +49,17 @@ public abstract class Instruction {
 	}
 
 	// TODO: What does abstract in the declaration below mean?
-	//       (Write a short explanation.)
+	//       (Abstract in the declaration below means the method has to be implemented by the subclasses of Instruction.
+	//       However they don't need  to have an implementation here in the Instruction class. )
 	@Override
 	public abstract String toString();
 
 	// TODO: Make sure that subclasses also implement equals and hashCode (needed in class Machine).
+
+	@Override
+	public abstract boolean equals(Object o);
+
+	@Override
+	public abstract int hashCode();
 
 }

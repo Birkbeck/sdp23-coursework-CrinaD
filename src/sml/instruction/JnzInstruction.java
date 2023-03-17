@@ -1,9 +1,10 @@
 package sml.instruction;
 
 import sml.Instruction;
-import sml.Labels;
 import sml.Machine;
 import sml.RegisterName;
+
+import java.util.Objects;
 
 // TODO: write a JavaDoc for the class
 
@@ -13,15 +14,13 @@ import sml.RegisterName;
 
 public class JnzInstruction extends Instruction {
 
+    private final String lb;
     private final RegisterName source;
-    private final Labels newLabel;
-
     public static final String OP_CODE = "jnz";
-
-    public JnzInstruction(String label, RegisterName source, Labels newLabel) {
+    public JnzInstruction(String label, RegisterName source, String lb) {
         super(label, OP_CODE);
-        this.newLabel = newLabel;
         this.source = source;
+        this.lb=lb;
     }
 
     @Override
@@ -29,15 +28,26 @@ public class JnzInstruction extends Instruction {
 
         int value = m.getRegisters().get(source);
         if(value!=0) {
-            return newLabel.getAddress(label);
+            return m.getLabels().getAddress(lb);
         }
         return NORMAL_PROGRAM_COUNTER_UPDATE;
 
     }
+    @Override
+    public boolean equals(Object i) {
+        if(i instanceof Instruction other){
+            return Objects.equals(i, other);
+        }
+        return false;
+    }
 
     @Override
+    public int hashCode(){
+        return source.hashCode();
+    };
+    @Override
     public String toString() {
-        return getLabelString() + getOpcode() + " " + source + " " + newLabel ;
+        return getLabelString() + getOpcode() + " " + source + " " + lb ;
     }
 }
 

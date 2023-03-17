@@ -4,6 +4,8 @@ import sml.Instruction;
 import sml.Machine;
 import sml.RegisterName;
 
+import java.util.Objects;
+
 // TODO: write a JavaDoc for the class
 
 /**
@@ -33,6 +35,19 @@ public class SubtractInstruction extends Instruction {
         public String toString() {
                 return getLabelString() + getOpcode() + " " + result + " " + source;
             }
+
+        @Override
+        public boolean equals(Object i) {
+            if(i instanceof Instruction other){
+                return Objects.equals(i, other);
+            }
+            return false;
+    }
+
+        @Override
+        public int hashCode(){
+            return result.hashCode()*source.hashCode();
+        };
     }
 
 
