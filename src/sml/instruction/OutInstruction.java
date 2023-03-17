@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * @author
+ * Code to excute the out instruction
  */
 
 public class OutInstruction extends Instruction {

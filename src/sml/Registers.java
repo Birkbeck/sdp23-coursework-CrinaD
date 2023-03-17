@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 /**
  *
  * @author ...
+ *
+ * Creates map that stores the registers and contains methods that allow access to the registers so that they can be
+ * used in other classes.
  */
 public final class Registers {
     private final Map<Register, Integer> registers = new HashMap<>();

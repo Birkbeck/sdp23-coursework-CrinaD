@@ -4,7 +4,7 @@ package sml;
 
 /**
  * Represents an abstract instruction.
- *
+ * Abstract methods need to be implemented in the subclasses and used by class Machine.
  * @author ...
  */
 public abstract class Instruction {

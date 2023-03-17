@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * @author
+ * Code to excute the mul instruction
  */
 
 public class MulInstruction extends Instruction {

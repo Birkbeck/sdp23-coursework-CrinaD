@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 /**
  *
  * @author ...
+ * Uses a map to store labels and methods to find the address of a label and to the map.
+ *
  */
 public final class Labels {
 	private final Map<String, Integer> labels = new HashMap<>();

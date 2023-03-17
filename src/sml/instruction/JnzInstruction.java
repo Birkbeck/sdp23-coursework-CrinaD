@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * @author
+ * Code to excute the jnz instruction
  */
 
 public class JnzInstruction extends Instruction {
